@@ -4,8 +4,8 @@ from .models import Listing
 
 def listing_list(request):
     listings = Listing.objects.all()
-    return render(request, 'lisiting.html', {'listings':listings})
+    return render(request, 'lisitings.html', {'listings':listings})
 
-def listing_retrieve(request, id):
-    listings = Listing.objects.get(id=id)
-    return render(request, 'lisiting.html', {'listings':listings})
+def listing_retrieve(request, pk):
+    listing = Listing.objects.get(id=pk)
+    return render(request, 'listing.html', {'listing':listing})
