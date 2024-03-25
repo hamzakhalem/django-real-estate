@@ -4,4 +4,4 @@ from .models import Listing
 class ListingFrom(ModelForm):
     class Meta: 
         model = Listing
-        fields  = ['title', 'price']
+        fields  = ['title', 'price', 'num_bedrooms', 'num_bathrooms', 'square_footage', 'address']
