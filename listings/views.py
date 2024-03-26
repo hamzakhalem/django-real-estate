@@ -19,3 +19,13 @@ def listing_create(request):
             form.save()
             return redirect('listing')
     return render(request, 'listing-create.html', {'form':form})
+
+def listing_update(request, pk):
+    listing = Listing.objects.get(id=pk)
+    form = ListingFrom(instance=listing)
+    if request.method == 'POST':
+        form = ListingFrom(request.POST, instance=listing)
+        if form.is_valid:
+            form.save()
+            return redirect('listing')
+    return render(request, 'listing-update.html', {'form':form})
