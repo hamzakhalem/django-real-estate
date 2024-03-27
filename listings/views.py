@@ -29,3 +29,8 @@ def listing_update(request, pk):
             form.save()
             return redirect('listing')
     return render(request, 'listing-update.html', {'form':form})
+
+def listing_delete(request, pk):
+    listing = Listing.objects.get(id=pk)
+    listing.delete()
+    return redirect('listing')
