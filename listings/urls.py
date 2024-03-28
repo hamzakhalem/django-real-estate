@@ -6,5 +6,5 @@ urlpatterns = [
     path('listing/<pk>/', listing_retrieve, name='listing-show'),
     path('listing-update/<pk>/', listing_update, name='listing-update'),
     path('listing-delete/<pk>/', listing_delete, name='listing-delete'),
-    path('listing-create/', listing_create, name='listing-create'),
+    path('listing-create/', listing_create, name='listing-create')
 ]
